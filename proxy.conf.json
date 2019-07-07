@@ -1,0 +1,18 @@
+{
+  "/api":{
+    "target":"http://139.199.79.80:8080",
+    "secure": false
+  },
+  "/JsonTest":{
+    "target":"http://139.199.79.80:8080",
+    "secure": false
+  },
+  "/display":{
+    "target":"http://139.199.79.80",
+    "secure": false
+  },
+  "/login":{
+    "target":"http://139.199.79.80:8080/",
+    "secure": false
+  }
+}

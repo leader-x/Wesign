@@ -1,0 +1,60 @@
+<div class="box">
+  <div class="box-header with-border">
+    <h3 class="box-title">专业列表</h3>
+
+  </div>
+  <div class="box-header  with-border">
+    <a class="btn btn-success btn-xs" (click)="create()"><span class="fa fa-edit"></span>&nbsp;新增专业</a>
+    &nbsp;&nbsp;&nbsp;
+    <a class="btn btn-success btn-xs" (click)="Refresh()"><span class="fa fa-repeat"></span> 刷新</a>
+    <div class="box-tools">
+      <div class="input-group input-group-sm" style="width: 150px;">
+        <input [formControl]="nameFilter" type="text" name="table_search" class="form-control pull-right" placeholder="查找专业">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nz-collapse>
+    <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active" [nzDisabled]="panel.disabled">
+      <nz-input-group nzCompact nzSearch>
+        <nz-select [ngModel]="'专业编号'">
+          <nz-option [nzLabel]="'专业编号'" [nzValue]="'专业编号'"></nz-option>
+          <nz-option [nzLabel]="'专业名称'" [nzValue]="'专业名称'"></nz-option>
+        </nz-select>
+        <input type="email" nz-input placeholder="关键词" style="width: 500px;">
+        <button nz-button nzType="primary"  nzSearch>查找</button>
+      </nz-input-group>
+    </nz-collapse-panel>
+  </nz-collapse>
+
+  <nz-table #basicTable [nzData]="displayData"  nzBordered nzShowSizeChanger [nzPageIndex]="pageindex" [nzPageSize]="pagesize" nzShowQuickJumper [nzShowTotal]="rangeTemplate">
+    <ng-template #rangeTemplate let-range="range" let-total>
+      {{range[0]}}到{{range[1]}}条数据 /总共{{total}}条数据
+    </ng-template>
+    <thead (nzSortChange)="sort($event)" nzSingleSort>
+    <tr>
+      <th> 序号</th>
+      <th nzShowSort nzSortKey="name">专业名称</th>
+      <th>所属院系序号</th>
+      <th>所属院系名称</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of basicTable.data | major:'name':keywork ;let i=index">
+      <td>{{data.id}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.collegeId}}</td>
+      <td>{{data.collegename}}</td>
+      <td>
+        <a class="btn btn-warning btn-xs" (click)="update(major,data.id)"><span class="fa fa-edit"></span>&nbsp;修改</a>&nbsp;
+        <a class="btn btn-danger btn-xs" (click)="delete(data.id)"><span class="fa fa-trash-o"></span>&nbsp;删除</a>
+      </td>
+    </tr>
+    </tbody>
+
+  </nz-table>
+</div>

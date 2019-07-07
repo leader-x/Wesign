@@ -1,0 +1,67 @@
+<div class="box box-info">
+  <div class="box-header with-border" >
+    <h3 class="box-title" >新增课程</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form class="form-horizontal">
+    <!--新增-->
+    <nz-row nzType="flex" nzJustify="center" >
+      <div nz-col nzSpan="12">
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+
+          <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="course_name " nzRequired>
+          <span>
+            课程名称
+            <nz-tooltip nzTitle="课程统称">
+              <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+            </nz-tooltip>
+          </span>
+            </nz-form-label>
+            <div>
+              <nz-select style="width: 200px;" id="course_name " name="course_name" formControlName="course_name" [(ngModel)]="course_name" nzAllowClear nzPlaceHolder="课程名称">
+                <nz-option nzValue="高级机器学习" nzLabel="高级机器学习"></nz-option>
+                <nz-option nzValue="智能技术" nzLabel="智能技术"></nz-option>
+                <nz-option nzValue="数值分析" nzLabel="数值分析"></nz-option>
+                <nz-option nzValue="高等数学" nzLabel="高等数学"></nz-option>
+                <nz-option nzValue="大学英语" nzLabel="大学英语"></nz-option>
+              </nz-select>
+            </div>
+          </nz-form-item>
+
+
+          <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="teacher_name" nzRequired>
+          <span>
+            授课教师
+            <nz-tooltip nzTitle="教师名字">
+              <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+            </nz-tooltip>
+          </span>
+            </nz-form-label>
+            <div>
+              <nz-select style="width: 200px;" id="teacher_name" name="teacher_name" formControlName="teacher_name" [(ngModel)]="teacher_name" nzAllowClear nzPlaceHolder="授课教师">
+                <nz-option nzValue="李老师" nzLabel="李老师"></nz-option>
+                <nz-option nzValue="黄老师" nzLabel="黄老师"></nz-option>
+                <nz-option nzValue="王老师" nzLabel="王老师"></nz-option>
+                <nz-option nzValue="陈老师" nzLabel="陈老师"></nz-option>
+                <nz-option nzValue="石老师" nzLabel="石老师"></nz-option>
+                <!--<nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>-->
+              </nz-select>
+            </div>
+          </nz-form-item>
+
+
+        </form>
+      </div>
+    </nz-row>
+    <div class="box-footer">
+      <a routerLink="/test/course"><button type="submit" class="btn btn-default">取消</button></a>
+      <a routerLink="/test/course"> <button type="submit" class="btn btn-info pull-right" (click)="save()">保存</button></a>
+    </div>
+
+    <!--编辑-->
+  </form>
+</div>

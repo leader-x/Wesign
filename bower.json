@@ -1,0 +1,25 @@
+{
+  "name": "angular-electron",
+  "description": "Angular 5 with Electron (Typescript + SASS + Hot Reload)",
+  "main": "main.js",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "angular",
+    "5",
+    "electron",
+    "typescript",
+    "sass"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

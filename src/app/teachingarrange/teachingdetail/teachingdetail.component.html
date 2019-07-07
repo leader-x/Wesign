@@ -1,0 +1,57 @@
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">课程信息</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form class="form-horizontal">
+    <div  class="box-body" >
+
+      <div nz-row nzType="flex"  nzJustify="center">
+        <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+          <label >课程编号:{{course_id}}</label>
+        </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label >课程名称:{{course_name}}</label>
+      </div>
+        <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+          <label >教室编号:{{place_id1}}</label>
+        </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label >授课教室:{{place_name}}</label>
+      </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+      <label >课程学分:{{course_score}}</label>
+    </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label >课程课时:{{course_time}}</label>
+      </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label >单双周:{{course_single_double}}</label>
+      </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label>授课时间:{{course_day}}</label>
+      </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label >周次:{{class_weekscope}}</label>
+      </div>
+      <div class="form-group" nz-col nzSpan="12" nzOffset="6">
+        <label >课次:{{class_scope}}</label>
+      </div>
+      <div class="form-group"nz-col nzSpan="12" nzOffset="6">
+        <label >授课对象:{{course_towho}}</label>
+      </div>
+        <div class="form-group"nz-col nzSpan="12" nzOffset="6">
+          <label >更多...</label>
+        </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <a routerLink="/test/teachingarrange"><button type="submit" class="btn btn-default" >返回</button></a>
+      </div>
+
+
+      <!-- /.box-footer -->
+    </div>
+  </form>
+</div>
